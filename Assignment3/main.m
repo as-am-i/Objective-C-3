@@ -54,7 +54,7 @@ int main(int argc, const char * argv[]) {
                     while (flag != 1) {
                         NSString *user_phone_label = [InputCollector inputForPrompt:@"Type the lavel for number:  "];
                         NSString *user_phone_number = [InputCollector inputForPrompt:@"Type your phone number:  "];
-                        if ([user_phone_label isEqualToString:@"" ]&& [user_phone_number isEqualToString:@""]) {
+                        if (![user_phone_label isEqualToString:@"" ]&& ![user_phone_number isEqualToString:@""]) {
                             contact.phoneNumbers = [contactList addMultiplePhoneNumbers:contact andLabel:user_phone_label andNumber:user_phone_number];
                         } else {
                             [InputCollector printToPrompt:@"Error: Label or Phone number is not found and cannot be added to contact"];
