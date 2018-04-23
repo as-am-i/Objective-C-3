@@ -100,6 +100,8 @@ int main(int argc, const char * argv[]) {
                 [[input commands] addObject:user_input];
                 [InputCollector printToPrompt:@"Showing last 3 commands(at most) you entered"];
                 [input showLastThreeCommands];
+            } else if ([user_input isEqualToString:@"quit"]) {
+                // nothing
             } else {
                 [[input commands] addObject:user_input];
                 NSString *result = [NSString stringWithFormat:@"Error: command not found: %@", user_input];
